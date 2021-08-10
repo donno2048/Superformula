@@ -1,4 +1,5 @@
 package com.elisha.mandelbrot;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     @Override
-    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (sketch != null) {
             sketch.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
