@@ -17,7 +17,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            //minifyEnabled true
+            //shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -26,7 +27,6 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
-
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
