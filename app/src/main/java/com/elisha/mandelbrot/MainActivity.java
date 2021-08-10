@@ -1,5 +1,8 @@
 package com.elisha.mandelbrot;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.WallpaperManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -18,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
         sketch = new Sketch();
         PFragment fragment = new PFragment(sketch);
         fragment.setView(frame, this);
+        Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+        intent.putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT, new ComponentName(this, Wallpaper.class));
+        startActivity(intent);
     }
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
