@@ -2,20 +2,12 @@ package com.elisha.mandelbrot;
 import java.util.ArrayList;
 import processing.core.PApplet;
 public class Sketch extends PApplet {
-  int scl, rows, cols, dir, mod, counter;
+  int scl = 3, rows, cols, dir, mod = 150, counter;
   float off;
   boolean picked, refresh;
-  double cx, cy, r;
-  double[] next_point;
+  double cx = -1, cy = 0, r = 1.0E-7;
+  double[] next_point = new double[3];
   double[][] x, y, next_x, next_y;
-  public Sketch() {
-    scl = 4;
-    cx = -0.16070135;
-    cy = 1.0375665;
-    r = 1.0E-7;
-    mod = 150;
-    next_point = new double[3];
-  }
   public void setup() {
     colorMode(3);
     background(0);
@@ -90,7 +82,7 @@ public class Sketch extends PApplet {
     int row = 300, col = 300, num = 100;
     double cx = -0.75, cy = 0, r = 1.25;
     boolean[][] map = new boolean[row][col];
-    ArrayList<Pair> boundary = new ArrayList<>();
+    ArrayList<Pair> boundary = new ArrayList<Pair>();
     for (int depth = 0; depth < (int) random(6, 11); depth++) {
       boundary.clear();
       double s = ((double) height) / width;
