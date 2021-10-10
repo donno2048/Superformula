@@ -4,7 +4,7 @@ plugins {
 android {
     compileSdk 30
     defaultConfig {
-        applicationId "com.elisha.mandelbrot"
+        applicationId "com.elisha.superformula"
         minSdk 16
         targetSdk 30
         versionCode 1
